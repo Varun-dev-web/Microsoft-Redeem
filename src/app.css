@@ -1,0 +1,637 @@
+/* ===========================
+   RESET & BASE
+   =========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  background: #2d2d2d;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+.rb-navbar {
+  width: 100%;
+  height: 56px;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 28px;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.rb-nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.rb-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.rb-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rb-location-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #1c1c1c;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  padding: 0 14px;
+  color: #cccccc;
+  font-size: 14px;
+  cursor: pointer;
+  height: 36px;
+  min-width: 158px;
+  justify-content: space-between;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.rb-location-dropdown:hover {
+  background: #252525;
+}
+
+.rb-location-menu {
+  position: relative;
+}
+
+.rb-location-options {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 20;
+  min-width: 100%;
+  padding: 4px;
+  background: #1c1c1c;
+  border: 1px solid #3a3a3a;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 35%);
+}
+
+.rb-location-option {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #cccccc;
+  font: inherit;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.rb-location-option:hover,
+.rb-location-option.selected {
+  background: #333333;
+  color: #ffffff;
+}
+
+.rb-location-icon {
+  display: flex;
+  align-items: center;
+  color: #aaaaaa;
+  flex-shrink: 0;
+}
+
+.rb-dropdown-arrow {
+  font-size: 9px;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.rb-redeem-btn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 0 22px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 36px;
+  white-space: nowrap;
+  transition: background 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.1px;
+  font-family: inherit;
+}
+
+.rb-redeem-btn:hover {
+  background: #eeeeee;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+}
+
+.rb-redeem-btn:active {
+  background: #dddddd;
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+.rb-hero {
+  background: #2d2d2d;
+  min-height: 640px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 44px;
+  padding-bottom: 0;
+}
+
+.rb-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.rb-hero-heading {
+  font-size: 29px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+.rb-shop-btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #111111;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+  padding: 10px 64px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 14px;
+  transition: background 0.15s;
+  min-width: 230px;
+  text-align: center;
+}
+
+.rb-shop-btn:hover {
+  background: #e8e8e8;
+}
+
+.rb-business-link {
+  color: #c0c0c0;
+  font-size: 13.5px;
+  text-decoration: underline;
+  margin-bottom: 22px;
+  cursor: pointer;
+  transition: color 0.15s;
+  display: block;
+}
+
+.rb-business-link:hover {
+  color: #ffffff;
+}
+
+/* Gift Card */
+.rb-gift-card-wrapper {
+  width: 256px;
+  height: 162px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.55);
+  flex-shrink: 0;
+  background: #1a0040;
+  position: relative;
+}
+
+.rb-gift-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.rb-hero-desc {
+  font-size: 14.5px;
+  color: #c8c8c8;
+  line-height: 1.68;
+  text-align: center;
+  max-width: 320px;
+}
+
+/* ===========================
+   CHARACTERS
+   =========================== */
+.rb-chars {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  pointer-events: none;
+}
+
+.rb-char {
+  position: absolute;
+  bottom: 0;
+}
+
+.rb-char img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Char 1 — Green jacket afro guy, LEFT */
+.rb-char-left {
+  left: calc(50% - 390px);
+  width: 195px;
+  height: 240px;
+  z-index: 3;
+}
+
+.rb-char-left img {
+  object-position: top center;
+}
+
+/* Char 2 — Blockhead green spiky hair, CENTER-LEFT */
+.rb-char-center-left {
+  left: calc(50% - 240px);
+  width: 210px;
+  height: 278px;
+  z-index: 4;
+}
+
+/* Char 3 — Girl green flowing hair, rainbow shirt, RIGHT */
+.rb-char-right {
+  right: calc(50% - 240px);
+  width: 210px;
+  height: 278px;
+  z-index: 4;
+}
+
+/* Char 4 — Blue shirt guy, FAR RIGHT */
+.rb-char-far-right {
+  right: calc(50% - 395px);
+  width: 190px;
+  height: 242px;
+  z-index: 3;
+}
+
+.rb-char-far-right img {
+  object-position: top center;
+}
+
+/* Image placeholder fallback */
+.rb-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #3a3a3a;
+  border: 2px dashed #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #777;
+  text-align: center;
+  border-radius: 6px;
+  line-height: 1.6;
+  padding: 8px;
+}
+
+/* ===========================
+   FREE VIRTUAL ITEMS SECTION
+   =========================== */
+.rb-free-items {
+  background: #1f1f1f;
+  padding: 50px 24px 54px;
+  text-align: center;
+  border-top: 1px solid #2e2e2e;
+}
+
+.rb-free-heading {
+  font-size: 27px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: -0.2px;
+}
+
+.rb-free-desc {
+  font-size: 15px;
+  color: #b8b8b8;
+  line-height: 1.72;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   MODAL / POPUP
+   =========================== */
+.rb-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+  backdrop-filter: blur(4px);
+}
+
+.rb-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.rb-modal {
+  background: #191919;
+  border: 1px solid #2e2e2e;
+  border-radius: 14px;
+  padding: 30px 36px 34px;
+  width: 100%;
+  max-width: 430px;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.85);
+  transform: translateY(-24px) scale(0.98);
+  transition: transform 0.25s ease;
+}
+
+.rb-modal-overlay.active .rb-modal {
+  transform: translateY(0) scale(1);
+}
+
+.rb-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.rb-modal-close {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 2px;
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.rb-modal-close:hover {
+  color: #ffffff;
+}
+
+.rb-modal-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.rb-modal-subtitle {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.rb-form-group {
+  margin-bottom: 15px;
+}
+
+.rb-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cccccc;
+  margin-bottom: 6px;
+}
+
+.rb-form-group input {
+  width: 100%;
+  background: #0e0e0e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.rb-form-group input::placeholder {
+  color: #4a4a4a;
+}
+
+.rb-form-group input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.18);
+}
+
+.rb-redeem-now-btn {
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.15s, transform 0.1s;
+  font-family: inherit;
+  letter-spacing: 0.1px;
+}
+
+.rb-redeem-now-btn:hover {
+  background: #e6e6e6;
+  transform: translateY(-1px);
+}
+
+.rb-redeem-now-btn:active {
+  transform: translateY(0);
+  background: #d4d4d4;
+}
+
+/* ===========================
+   SUCCESS VIEW
+   =========================== */
+.rb-success-view {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.rb-success-icon {
+  width: 66px;
+  height: 66px;
+  background: #00a650;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  margin: 0 auto 22px;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(0, 166, 80, 0.35);
+}
+
+.rb-success-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.45;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rb-success-subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 28px;
+  line-height: 1.55;
+}
+
+.rb-ok-btn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 52px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.rb-ok-btn:hover {
+  background: #e6e6e6;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 960px) {
+  .rb-char-left {
+    left: 4px;
+    width: 155px;
+    height: 200px;
+  }
+  .rb-char-center-left {
+    left: 130px;
+    width: 165px;
+    height: 220px;
+  }
+  .rb-char-right {
+    right: 130px;
+    width: 165px;
+    height: 220px;
+  }
+  .rb-char-far-right {
+    right: 4px;
+    width: 150px;
+    height: 195px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rb-navbar {
+    padding: 0 12px;
+  }
+  .rb-location-dropdown {
+    min-width: 120px;
+    font-size: 13px;
+    padding: 0 10px;
+  }
+  .rb-hero {
+    padding-top: 32px;
+    min-height: 560px;
+  }
+  .rb-hero-heading {
+    font-size: 23px;
+  }
+  .rb-shop-btn {
+    min-width: 190px;
+    padding: 9px 30px;
+  }
+  .rb-chars {
+    height: 200px;
+  }
+  .rb-char-left {
+    left: -8px;
+    width: 110px;
+    height: 145px;
+  }
+  .rb-char-center-left {
+    left: 75px;
+    width: 125px;
+    height: 165px;
+  }
+  .rb-char-right {
+    right: 75px;
+    width: 125px;
+    height: 165px;
+  }
+  .rb-char-far-right {
+    right: -8px;
+    width: 108px;
+    height: 143px;
+  }
+  .rb-gift-card-wrapper {
+    width: 210px;
+    height: 133px;
+  }
+  .rb-modal {
+    padding: 24px 18px 28px;
+    margin: 12px;
+    max-width: calc(100% - 24px);
+  }
+  .rb-free-desc br {
+    display: none;
+  }
+}
